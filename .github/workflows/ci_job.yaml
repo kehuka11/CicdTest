@@ -27,7 +27,7 @@ jobs:
 
       - name: Start Container
         run: docker-compose up -d
-        working-directory: /demo
+        working-directory: ./demo
 
       - name: Wait DB
         run: sleep 120
@@ -40,3 +40,4 @@ jobs:
 
       - name: Down Container
         run: docker-compose down
+        working-directory: ./demo
