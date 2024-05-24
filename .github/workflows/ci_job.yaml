@@ -21,12 +21,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
+      - name: list
+        run: ls
 
       - name: Set up Docker
         run: sudo apt-get install docker-compose
 
       - name: Start Container
-        run: docker-compose up -d
+        run: docker-compose up -f ./demo/docker-compose.yml
+        working-directory: ./
 
       - name: Wait DB
         run: sleep 120
@@ -39,3 +42,4 @@ jobs:
 
       - name: Down Container
         run: docker-compose down
+        working-directory: ./demo
