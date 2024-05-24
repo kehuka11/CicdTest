@@ -6,6 +6,7 @@
     <settings>
         <setting name="defaultStatementTimeout" value="3"/>
         <setting name="logImpl" value="LOG4J2"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
     </settings>
     <environments default="development">
         <environment id="development">
