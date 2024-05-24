@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - feature/*
+      - main
 
 
 jobs:
@@ -19,7 +19,8 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
-          destribution: 'adopt'
+          destribution: 'temurin'
+          overwrite-settings: false
 
       - name: Set up Docker
         run: sudo apt-get install docker-compose
