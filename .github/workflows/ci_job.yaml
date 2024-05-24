@@ -21,6 +21,8 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
           cache: 'gradle'
+      - name: list
+        run: ls
 
       - name: Set up Docker
         run: sudo apt-get install docker-compose
