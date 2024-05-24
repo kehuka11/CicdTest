@@ -1,1 +1,2 @@
-insert into USERS VALUES ('testuserid')
+insert into USERS VALUES ('testuserid');
+commit;
