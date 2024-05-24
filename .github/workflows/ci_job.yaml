@@ -28,19 +28,19 @@ jobs:
 
       - name: Start Container
         run: docker-compose up -d
-        working-directory: ./
+        working-directory: ./demo
 
       - name: Wait DB
         run: sleep 90
 
       - name: Run Flyway
         run: ./gradlew flywayMigrate
-        working-directory: ./
+        working-directory: ./demo
 
       - name: Run test
         run: ./gradlew test
-        working-directory: ./
+        working-directory: ./demo
 
       - name: Down Container
         run: docker-compose down
-        working-directory: ./
+        working-directory: ./demo
