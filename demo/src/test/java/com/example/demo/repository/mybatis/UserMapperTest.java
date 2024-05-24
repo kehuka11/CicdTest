@@ -17,6 +17,7 @@ public class UserMapperTest {
     @Test
     public void getTest() {
         List<User> userList = userMapper.selectAllUser();
+        assertEquals(1, userList.size());
         assertEquals("testuserid", userList.get(0).getUserId());
     }
 }
