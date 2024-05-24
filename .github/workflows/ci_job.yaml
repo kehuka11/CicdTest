@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -28,18 +27,20 @@ jobs:
         run: sudo apt-get install docker-compose
 
       - name: Start Container
-        run: docker-compose up -f ./demo/docker-compose.yml
+        run: docker-compose up -d
         working-directory: ./
 
       - name: Wait DB
-        run: sleep 120
+        run: sleep 90
 
       - name: Run Flyway
         run: ./gradlew flywayMigrate
+        working-directory: ./
 
       - name: Run test
         run: ./gradlew test
+        working-directory: ./
 
       - name: Down Container
         run: docker-compose down
-        working-directory: ./demo
+        working-directory: ./
