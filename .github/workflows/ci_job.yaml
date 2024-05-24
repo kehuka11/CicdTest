@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
+          destribution: 'adopt'
 
       - name: Set up Docker
         run: sudo apt-get install docker-compose
