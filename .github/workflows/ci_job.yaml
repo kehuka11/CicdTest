@@ -18,9 +18,9 @@ jobs:
       - name: Set up JDK 17
         uses: actions/setup-java@v2
         with:
-          java-version: '17'
           destribution: 'temurin'
-          overwrite-settings: false
+          java-version: '17'
+          cache: 'gradle'
 
       - name: Set up Docker
         run: sudo apt-get install docker-compose
