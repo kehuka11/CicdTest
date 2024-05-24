@@ -28,6 +28,7 @@ public class UserTaskletTest {
     public void testJob() throws Exception {
         // launchJobでJob全体を実行する
         JobExecution jobExecution = this.jobLauncherTestUtils.launchJob();
+        System.out.println("success");
         //実行結果と予想値と比較
         assertEquals("COMPLETED", jobExecution.getExitStatus().getExitCode());
 
