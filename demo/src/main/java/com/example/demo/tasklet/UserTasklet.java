@@ -23,8 +23,11 @@ public class UserTasklet implements Tasklet {
     @Override
     public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws InterruptedException {
 
-        List<User> userList = userMapper.selectAllUser();
-
+        try {
+            List<User> userList = userMapper.selectAllUser();
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        }
 
         return RepeatStatus.FINISHED;
     }
