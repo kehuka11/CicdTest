@@ -26,7 +26,7 @@ jobs:
         run: sudo apt-get install docker-compose
 
       - name: Start Container
-        run: docker-compose up -d
+        run: docker-compose up -f ./demo/docker-compose.yml
         working-directory: ./
 
       - name: Wait DB
@@ -40,4 +40,4 @@ jobs:
 
       - name: Down Container
         run: docker-compose down
-        working-directory: ./
+        working-directory: ./demo
