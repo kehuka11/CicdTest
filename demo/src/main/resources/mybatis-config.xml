@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="defaultStatementTimeout" value="3"/>
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:@localhost:1521/pdb01"/>
+                <property name="username" value="hogeuser"/>
+                <property name="password" value="passw0rd"/>
+                <property name="loginTimeout" value="3"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="user_mapper.xml"/>
+    </mappers>
+</configuration>
