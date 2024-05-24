@@ -20,6 +20,7 @@ jobs:
         with:
           java-version: '17'
           destribution: 'temurin'
+          overwrite-settings: false
 
       - name: Set up Docker
         run: sudo apt-get install docker-compose
