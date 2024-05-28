@@ -26,17 +26,13 @@ jobs:
       - name: Set up Docker
         run: sudo apt-get install docker-compose
 
+      - name:  Pull Docker image
+        run: docker pull container-registry.oracle.com/database/free:latest
+
       - name: Start Container
-        uses: gvenzl/setup-oracle-free@v1
-        with: 
-          app-user: hogeuser
-          app-user-password: passw0rd
-          startup-scripts: ./demo/script/startup
-          setup-scripts: ./demo/script/setup
-          port: 1521
-          health-max-retries: 10
-          container-runtime: docker
-          oracle-password: passw0rd
+        run: docker-compose up -d
+        working-directory: ./demo
+
 
       - name: Run Flyway
         run: |
@@ -48,5 +44,10 @@ jobs:
         run: |
           chmod +x ./gradlew
           ./gradlew test
+        working-directory: ./demo
+
+
+      - name: Down Container
+        run: docker-compose down
         working-directory: ./demo
 
