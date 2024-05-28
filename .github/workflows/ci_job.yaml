@@ -27,13 +27,13 @@ jobs:
         run: sudo apt-get install docker-compose
 
       - name: Start Container
-        - uses: gvenzl/setup-oracle-free@v1
-          with: 
-            app-user: hogeuser
-            app-user-password: passw0rd
-            startup-scripts: ./demo/script/startup
-            setup-scripts: ./demo/script/setup
-            port: 1521
+        uses: gvenzl/setup-oracle-free@v1
+        with: 
+          app-user: hogeuser
+          app-user-password: passw0rd
+          startup-scripts: ./demo/script/startup
+          setup-scripts: ./demo/script/setup
+          port: 1521
 
       - name: Wait DB
         run: sleep 90
