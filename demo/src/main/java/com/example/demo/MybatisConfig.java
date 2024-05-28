@@ -19,7 +19,7 @@ public class MybatisConfig {
 
     @Bean
     public DataSource dataSource() {
-        return DataSourceBuilder.create().url("jdbc:oracle:thin:@localhost:1521/pdb01")
+        return DataSourceBuilder.create().url("jdbc:oracle:thin:@localhost:1521/FREEPDB1")
                 .username("hogeuser")
                 .password("passw0rd")
                 .build();

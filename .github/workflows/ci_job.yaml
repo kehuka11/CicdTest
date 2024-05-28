@@ -34,7 +34,7 @@ jobs:
         working-directory: ./demo
 
       - name: Wait DB
-        run: sleep 70
+        run: sleep 360
 
 
       - name: Run Flyway

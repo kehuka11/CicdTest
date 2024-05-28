@@ -47,7 +47,7 @@ dependencies {
 }
 
 flyway {
-	url = "jdbc:oracle:thin:@//localhost:1521/pdb01"
+	url = "jdbc:oracle:thin:@//localhost:1521/FREEPDB1"
 	user = "hogeuser"
 	password = "passw0rd"
 	locations = arrayOf("filesystem:src/main/resources/migration")
