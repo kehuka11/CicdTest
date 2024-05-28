@@ -33,6 +33,9 @@ jobs:
         run: docker-compose up -d
         working-directory: ./demo
 
+      - name: Wait DB
+        run: sleep 70
+
 
       - name: Run Flyway
         run: |
