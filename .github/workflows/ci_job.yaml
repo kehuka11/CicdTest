@@ -38,17 +38,15 @@ jobs:
           container-runtime: docker
           oracle-password: passw0rd
 
-      - name: Wait DB
-        run: sleep 90
-
       - name: Run Flyway
-        run: ./gradlew flywayMigrate
+        run: |
+          chmod +x ./gradlew
+          ./gradlew flywayMigrate
         working-directory: ./demo
 
       - name: Run test
-        run: ./gradlew test
+        run: |
+          chmod +x ./gradlew
+          ./gradlew test
         working-directory: ./demo
 
-      - name: Down Container
-        run: docker-compose down
-        working-directory: ./demo
