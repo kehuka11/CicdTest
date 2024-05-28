@@ -4,7 +4,7 @@ spring:
       demo
 
   datasource:
-    url: "jdbc:oracle:thin:@localhost:1521/pdb01"
+    url: "jdbc:oracle:thin:@localhost:1521/FREEPDB1"
     username: hogeuser
     password: passw0rd
     driver-class-name: oracle.jdbc.driver.OracleDriver
