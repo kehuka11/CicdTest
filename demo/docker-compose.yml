@@ -20,4 +20,6 @@ volumes:
   oracle-emcc2:
    name: oracle-emcc2
 
-
+networks:
+  external:
+    external: true
